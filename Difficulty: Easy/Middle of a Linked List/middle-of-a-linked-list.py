@@ -8,15 +8,11 @@ class node:
 class Solution:
     def getMiddle(self, head):
         if not head:
-            return head
-        curr = head
-        length = 0 
-        while curr:
-            length+=1
-            curr = curr .next
-        curr= head 
-        mid = length //2
-        for i in range (mid):
-            curr = curr.next
-        return curr.data   
+            return None 
+        slow , fast = head , head 
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        return slow.data     
+        
         
